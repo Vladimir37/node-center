@@ -1,0 +1,80 @@
+extends layout
+
+block content
+	article.admin_head
+		h1 Добавить книгу
+	article.admin_form
+		form(action='/administration/book', method='post', enctype="multipart/form-data")
+			input(type="text", name='name', placeholder='Название', required)
+			br
+			input(type="text", name='autor', placeholder='Имя автора', required)
+			br
+			p Русский
+				input(type="radio", name="lang", value="0", checked)
+			p Английский
+				input(type="radio", name="lang", value="1")
+			textarea(name="desc", placeholder="Описание", required)
+			br
+			input(type="file", name="cover", required)
+			br
+			input(type="submit", value="Создать книгу")
+	article.admin_head
+		h1 Добавить ссылку
+	article.admin_form
+		form(action='/administration/link', method='post')
+			input(type="text", name='link', placeholder='Ссылка', required)
+			br
+			input(type="text", name='desc', placeholder='Описание', required)
+			br
+			input(type="submit", value="Создать ссылку")
+	article.admin_head
+		h1 Добавить туториал
+	article.admin_form
+		form(action='/administration/tutorial', method='post')
+			input(type="text", name='name', placeholder='Название', required)
+			br
+			input(type="text", name='origin', placeholder='Источник', required)
+			br
+			textarea(name="cover", placeholder="Обложка", required)
+			br
+			textarea(name="text", placeholder="Основной текст", required)
+			br
+			input(type="text", name='link', placeholder='Ссылка на это', required)
+			br
+			input(type="submit", value="Создать туториал")
+	article.admin_head
+		h1 Добавить пакет
+	article.admin_form
+		form(action='/administration/pack', method='post')
+			input(type="text", name='name', placeholder='Название', required)
+			br
+			input(type="text", name='req', placeholder='Настоящее название', required)
+			br
+			textarea(name="cover", placeholder="Обложка", required)
+			br
+			textarea(name="text", placeholder="Основной текст", required)
+			br
+			input(type="text", name='link', placeholder='Ссылка на это', required)
+			br
+			input(type="submit", value="Создать пакет")
+	article.admin_head
+		h1 Добавить статью
+	article.admin_form
+		form(action='/administration/art', method='post')
+			input(type="text", name='name', placeholder='Название', required)
+			br
+			input(type="text", name='origin', placeholder='Источник', required)
+			br
+			textarea(name="cover", placeholder="Обложка", required)
+			br
+			textarea(name="text", placeholder="Основной текст", required)
+			br
+			input(type="text", name='link', placeholder='Ссылка на это', required)
+			br
+			input(type="text", name='tags', placeholder='Теги', required)
+			p Node
+				input(type="radio", name="top", value="0", checked)
+			p Other
+				input(type="radio", name="top", value="1")
+			br
+			input(type="submit", value="Создать статью")

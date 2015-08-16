@@ -1,0 +1,28 @@
+extends layout
+
+mixin book(name, autor, desc, img)
+	article.book
+		img(src="/image/books/#{img}", alt="cover")
+		article.book_text
+			p.autor #{autor}
+			p.book_name #{name}
+			p.desc #{desc}
+
+block content
+	h1 Книги
+	h2 На русском
+	- for(var i = 0; i < model.length; i++)
+		- if(model[i].lang === 0)
+			- var name = model[i].name
+			- var autor = model[i].autor
+			- var desc = model[i].desc
+			- var img = model[i].img
+			mixin book(name, autor, desc, img)
+	h2 На английском
+	- for(var i = 0; i < model.length; i++)
+		- if(model[i].lang === 1)
+			- var name = model[i].name
+			- var autor = model[i].autor
+			- var desc = model[i].desc
+			- var img = model[i].img
+			mixin book(name, autor, desc, img)

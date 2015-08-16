@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1=model[0].name
+	article.origin
+		p Источник:
+			a(href=model[0].origin)=model[0].origin
+	article.info!=model[0].text

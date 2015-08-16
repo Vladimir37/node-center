@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Статьи по смежным темам
+	- for(var i = 0; i < model.length; i++)
+			- var name = model[i].name
+			- var cover = model[i].cover
+			- var link = '/about/other/' + model[i].link
+			- var origin = model[i].origin
+			section.info
+				h1=name
+				article.origin Источник: 
+					a(href=origin)=origin
+				p=cover
+				article.more
+					a(href=link) Читать полностью

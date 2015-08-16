@@ -1,0 +1,20 @@
+{ "index": { "segment": false, "parts": null, "subsegment": false },
+  "download": { "segment": false, "parts": null, "subsegment": false },
+  "docs": 
+   { "segment": true,
+     "parts": 
+      { "about": "О документации",
+        "tutorials": "Туториалы",
+        "packages": "Пакеты",
+        "books": "Книги",
+        "links": "Полезные ссылки" },
+     "subsegment": true },
+  "about": 
+   { "segment": true,
+     "parts": 
+      { "about": "О разделе",
+        "node": "Node.js",
+        "other": "Смежные технологии" },
+     "subsegment": true },
+  "community": { "segment": false, "parts": null, "subsegment": false },
+  "contact": { "segment": false, "parts": null, "subsegment": false } }

@@ -1,0 +1,19 @@
+{
+  "name": "node_center",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "mysql": "*",
+    "express": "*",
+    "formidable": "*",
+    "serve-favicon": "*",
+    "path": "*",
+    "redis": "*",
+    "cookie-parser": "*",
+    "jade": "*"
+  }
+}

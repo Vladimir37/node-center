@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1 Полезные ссылки
+	table.links
+		- for(var i = 0; i < model.length; i++)
+			- var link = model[i].link
+			- var desc = model[i].desc
+			tr
+				td
+					a(href=link, target="_blank")=link
+				td=desc

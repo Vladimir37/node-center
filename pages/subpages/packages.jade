@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Пакеты и модули
+	- for(var i = 0; i < model.length; i++)
+			- var name = model[i].name
+			- var cover = model[i].cover
+			- var text = model[i].text
+			- var req = model[i].req
+			- var link = '/docs/packages/' + model[i].link
+			section.info
+				h1=name
+				article.req=req
+				p=cover
+				article.more
+					a(href=link) Подробно

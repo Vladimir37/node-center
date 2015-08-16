@@ -1,0 +1,36 @@
+doctype
+html
+	head
+		meta(charset="UTF-8")
+		title Node Center
+		link(rel='stylesheet', href='/source/style', type='text/less')
+		script(src='/source/less')
+		script(src='/source/jquery')
+		script(src='/source/client')
+		meta(name="robots",content="all")
+		meta(name="description",content="Node-Center - это главный русскоязычный сайт, посвящённый Node.js. Здесь вы можете найти не только самые свежие новости, но и огромное количество переведённой на русский язык документации.")
+		meta(name="keywords",content="Node.js, node, javascript, server, сервер")
+		include ya.js
+	body
+		header
+			img(src='/image/logo.png',alt='logo')
+			section.menu
+				a(href="/")
+					nav Главная
+				a(href="/download")
+					nav Загрузить
+				a(href="/docs")
+					nav Документация
+				a(href="/about")
+					nav О технологии
+				a(href="/community")
+					nav Сообщество
+				a(href="/contact")
+					nav Связь
+		section.main
+			section.content
+				block content
+				section.panel
+					block panel
+		footer
+			
