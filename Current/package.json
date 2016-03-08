@@ -1,0 +1,22 @@
+{
+    "name": "Node_center",
+    "version": "0.0.1",
+    "license": "MIT License",
+    "main": "node_center.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Vladimir37/node-center/"
+    },
+    "scripts": {
+        "start": "node node_center.js"
+    },
+    "dependencies": {
+        "express": "*",
+        "formidable": "*",
+        "serve-favicon": "*",
+        "cookie-parser": "*",
+        "body-parser": "*",
+        "mongoose": "*",
+        "jade": "*"
+    }
+}
