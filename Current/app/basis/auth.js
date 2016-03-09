@@ -1,27 +1,32 @@
+var formidable = require('formidable');
+
 var models = require('./database');
 var errors = require('./errors');
 
 function login(req, res, next) {
     var form = new formidable.IncomingForm({
-        uploadDir: "tmp"
+        uploadDir: "temp"
     });
     form.parse(req, function(err, fields) {
         if(err) {
             console.log(err);
             errors.e500(req, res, next);
         }
+        console.log(fields);
         models.Admin.findOne({
             name: fields.login,
             pass: fields.pass
         }).then(function(admin) {
+            console.log(admin);
             if(admin) {
                 res.cookie('node_center_adm', admin._id);
                 res.redirect('/admin');
             }
             else {
-                res.redirect('/admin');
+                res.redirect('/admin/login');
             }
         }).catch(function(err) {
+            console.log('ERROR END');
             console.log(err);
             errors.e500(req, res, next);
         });

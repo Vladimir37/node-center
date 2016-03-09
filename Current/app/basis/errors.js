@@ -17,7 +17,7 @@ function render_error(err, req, res, next) {
     console.log(err);
     res.status(err.status || 500);
     var err_num = err.status || 500;
-    res.render('errors/e' + err_num);
+    res.render('errors/e' + err_num + '.jade');
 };
 
 exports.e404 = not_found;
