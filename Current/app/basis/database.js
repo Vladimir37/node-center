@@ -12,12 +12,13 @@ connection.on('error', function(err) {
 });
 
 // Models
+var models = {};
 //admins
 var adminSchema = new mongoose.Schema({
     name: String,
     pass: String
 });
-var Admin = mongoose.model('Admin', adminSchema);
+models.Admin = mongoose.model('Admin', adminSchema);
 
 //books
 var bookSchema = new mongoose.Schema({
@@ -27,17 +28,68 @@ var bookSchema = new mongoose.Schema({
     image: String,
     inRussian: Boolean
 });
-var Book = mongoose.model('Book', bookSchema);
+models.Book = mongoose.model('Book', bookSchema);
 
-//articles
-var articleSchema = new mongoose.Schema({
+//articles Node.js
+var articleNodeSchema = new mongoose.Schema({
     title: String,
     source: String,
     cover: String,
     text: String,
     tags: Array
 });
+models.ArticleNode = mongoose.model('ArticleNode', articleNodeSchema);
+
+//articles other
+var articleOtherSchema = new mongoose.Schema({
+    title: String,
+    source: String,
+    cover: String,
+    text: String,
+    tags: Array
+});
+models.ArticleOther = mongoose.model('ArticleNode', articleOtherSchema);
+
+//links
+var linkScheme = new mongoose.Schema({
+    link: String,
+    description: String
+});
+models.Link = mongoose.model('Link', linkScheme);
+
+//tutorials
+var tutorialScheme = new mongoose.Schema({
+    title: String,
+    source: String,
+    cover: String,
+    text: String
+});
+models.Tutorial = mongoose.model('Tutorial', tutorialScheme);
+
+//packages and modules
+var packageSchema = new mongoose.Schema({
+    title: String,
+    source: String,
+    cover: String,
+    text: String
+});
+models.Package = mongoose.model('Package', packageSchema);
+
+var moduleSchema = new mongoose.Schema({
+    title: String,
+    source: String,
+    cover: String,
+    text: String
+});
+models.Module = mongoose.model('Package', moduleSchema);
+
+var toolSchema = new mongoose.Schema({
+    title: String,
+    cover: String,
+    text: String
+});
+models.Tool = mongoose.model('Tool', toolSchema);
 
 mongoose.connect('mongodb://localhost/node_center');
 
-module.exports = mongoose;
+module.exports = models;
