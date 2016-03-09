@@ -3,11 +3,52 @@ html(lang="ru")
     head
         meta(charset="UTF-8")
         title Node Center
-        script(src="/src/data/js/main.js")
-        link(rel="stylesheet/less" href="/src/data/less/main.less")
-        script(src="/src/data/js/less.js")
+        meta(name="robots",content="all")
+        meta(name="description",content="Node-Center - это главный русскоязычный сайт, посвящённый Node.js. Здесь вы можете найти не только самые свежие новости, но и огромное количество переведённой на русский язык документации.")
+        meta(name="keywords",content="Nodejs, node, javascript, server, сервер, express, mongo, mongodb, sails, уроки, учебник")
+        script(src="/src/scripts/jquery.js")
+        script(src="/src/scripts/bootstrap.min.js")
+        script(src="/src/scripts/main.js")
+        link(rel="stylesheet" href="/src/styles/bootstrap.min.css")
+        link(rel="stylesheet" href="/src/styles/main.css")
+        //script(src="/src/scripts/less.js")
         //- add mixins
         include mixins
     body
+        section.header
+            section.wrapper
+                figure.logo
+                    img(src='/src/img/main/logo.png' alt='logo')
+                article.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li.main_nav
+                            a(href="#") Главная
+                        li
+                            a(href="#" class="dropdown-toggle" data-toggle="dropdown") Документация
+                            ul.dropdown-menu
+                                li
+                                    a(href='') Модули
+                                li
+                                    a(href='') Пакеты
+                                li
+                                    a(href='') Туториалы
+                                li
+                                    a(href='') Установка
+                        li
+                            a(href="#" class="dropdown-toggle" data-toggle="dropdown") Технология
+                            ul.dropdown-menu
+                                li
+                                    a(href='') Книги
+                                li
+                                    a(href='') Ссылки
+                                li
+                                    a(href='') Статьи
+                                li
+                                    a(href='') Смежные темы
+                        li
+                            a(href="#") Инструменты
+                        li
+                            a(href="#") Помочь
         section.content
-            block content
+            section.wrapper
+                block content

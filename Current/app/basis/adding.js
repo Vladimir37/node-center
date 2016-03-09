@@ -131,7 +131,7 @@ function book(req, res, next) {
     form.parse(req, function(err, fields, files) {
         var title = fields.title;
         var author = fields.cover;
-        var description = text_handling(fields.decription);
+        var description = text_handling(fields.description);
         var inRussian = fields.inRussian;
         var image = files.image;
         var image_name = +new Date() + '.' + mime.extension(image.type);
@@ -159,5 +159,6 @@ exports.article = article;
 exports.link = link;
 exports.tutorial = tutorial;
 exports.packages = packages;
+exports.modules = modules;
 exports.tool = tool;
 exports.book = book;
