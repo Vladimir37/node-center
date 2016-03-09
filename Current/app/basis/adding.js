@@ -6,11 +6,10 @@ var models = require('./database');
 var errors = require('./errors');
 var text_handling = require('./text_handle');
 
-var form = new formidable.IncomingForm({
-    uploadDir: "temp"
-});
-
 function article(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields) {
         var type_article = fields.type == 'node' ? 'Node' : 'Other';
         var title = fields.title;
@@ -34,6 +33,9 @@ function article(req, res, next) {
 }
 
 function link(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields) {
         var link = fields.link;
         var description = fields.description;
@@ -50,6 +52,9 @@ function link(req, res, next) {
 }
 
 function tutorial(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields) {
         var title = fields.title;
         var source = fields.source;
@@ -72,6 +77,9 @@ function tutorial(req, res, next) {
 }
 
 function packages(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields) {
         var title = fields.title;
         var cover = text_handling(fields.cover);
@@ -90,6 +98,9 @@ function packages(req, res, next) {
 }
 
 function modules(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields) {
         var title = fields.title;
         var source = fields.source;
@@ -110,6 +121,9 @@ function modules(req, res, next) {
 }
 
 function tool(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields) {
         var title = fields.title;
         var cover = text_handling(fields.cover);
@@ -128,11 +142,14 @@ function tool(req, res, next) {
 }
 
 function book(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
     form.parse(req, function(err, fields, files) {
         var title = fields.title;
         var author = fields.cover;
         var description = text_handling(fields.description);
-        var inRussian = fields.inRussian;
+        var inRussian = Boolean(fields.inRussian);
         var image = files.image;
         var image_name = +new Date() + '.' + mime.extension(image.type);
         fs.rename(image.path, 'client/source/img/added/' + image_name, function(err) {

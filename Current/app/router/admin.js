@@ -3,6 +3,7 @@ var express = require('express');
 var render = require('../basis/render');
 var auth = require('../basis/auth');
 var adding = require('../basis/adding');
+var preview = require('../basis/preview');
 
 var router = express.Router();
 
@@ -18,5 +19,7 @@ router.post('/packages', auth.check, adding.packages);
 router.post('/modules', auth.check, adding.modules);
 router.post('/tool', auth.check, adding.tool);
 router.post('/book', auth.check, adding.book);
+
+router.post('/preview', auth.check, preview);
 
 module.exports = router;

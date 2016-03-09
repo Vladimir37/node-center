@@ -1,6 +1,7 @@
 extends ../basis/layout
 
 block content
+    h2 Создание
     article.accord_head Node.js статья
     article.accord_body
         form(action='/admin/article' method='POST')
@@ -40,7 +41,7 @@ block content
             br
             input(type='text' name='author' placeholder='Автор' required)
             br
-            textarea(name='description' placeholder='Краткий текст' required)
+            textarea(name='description' placeholder='Описание' required)
             br
             label
                 input(type='checkbox' name='inRussian')
@@ -83,7 +84,7 @@ block content
 
     article.accord_head Инструмент
     article.accord_body
-        form(action='/admin/tools' method='POST')
+        form(action='/admin/tool' method='POST')
             input(type='text' name='title' placeholder='Заголовок' required)
             br
             textarea(name='cover' placeholder='Краткий текст' required)
@@ -106,3 +107,11 @@ block content
             input(type='text' name='tags' placeholder='Теги через пробел' required)
             br
             input(type='submit' value='Создать')
+
+    h2 Превью
+    article.accord_head Превью
+    article.accord_body
+        form(action='/admin/preview' method='POST')
+            textarea(name='content' required)
+            br
+            input(type='submit' value='Отправить')
