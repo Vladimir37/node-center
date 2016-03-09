@@ -62,14 +62,14 @@ var tutorialScheme = new mongoose.Schema({
     title: String,
     source: String,
     cover: String,
-    text: String
+    text: String,
+    tags: Array
 });
 models.Tutorial = mongoose.model('Tutorial', tutorialScheme);
 
 //packages and modules
 var packageSchema = new mongoose.Schema({
     title: String,
-    source: String,
     cover: String,
     text: String
 });

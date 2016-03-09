@@ -15,7 +15,7 @@
         "formidable": "*",
         "serve-favicon": "*",
         "cookie-parser": "*",
-        "body-parser": "*",
+        "mime-types": "*",
         "mongoose": "*",
         "jade": "*"
     }
