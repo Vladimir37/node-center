@@ -1,0 +1,8 @@
+extends ../basis/layout
+
+block content
+    a(href=page).btn.btn-default.page-switch К ленте
+    ul.list-group
+        - each link, i in links
+            li.list-group-item
+                a(href=page + '/item/' + link._id)=link.title

@@ -26,7 +26,6 @@ function login(req, res, next) {
                 res.redirect('/admin/login');
             }
         }).catch(function(err) {
-            console.log('ERROR END');
             console.log(err);
             errors.e500(req, res, next);
         });

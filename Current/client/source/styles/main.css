@@ -3,6 +3,7 @@
     margin: 0 auto;
 }
 
+/* main menu */
 .logo img {
     width: 100%;
     margin-top: 15px;
@@ -24,6 +25,25 @@
     color: #70cf36;
 }
 
+/* main content */
+.text_block {
+    white-space: pre-wrap;
+}
+.code {
+    border: 1px solid #6ABD28;
+    padding: 5px;
+    background: #223142;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.page-switch {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* admin panel */
 .accord_body {
     display: none;
     margin-bottom: 10px;
@@ -37,6 +57,7 @@
     border: 1px solid #6ABD28;
     padding: 5px;
 }
+
 a {
     outline: none !important;
 }
