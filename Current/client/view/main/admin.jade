@@ -1,23 +1,108 @@
 extends ../basis/layout
 
 block content
-    article.accord_head Article
-    article.accord_body Test
-
-    article.accord_head
+    article.accord_head Node.js статья
     article.accord_body
+        form(action='/admin/article' method='POST')
+            input(type='hidden' name='type' value='node')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            input(type='text' name='source' placeholder='Источник' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='text' name='tags' placeholder='Теги через пробел' required)
+            br
+            input(type='submit' value='Создать')
 
-    article.accord_head
+    article.accord_head Статья на смежные темы
     article.accord_body
+        form(action='/admin/article' method='POST')
+            input(type='hidden' name='type' value='other')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            input(type='text' name='source' placeholder='Источник' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='text' name='tags' placeholder='Теги через пробел' required)
+            br
+            input(type='submit' value='Создать')
 
-    article.accord_head
+    article.accord_head Книга
     article.accord_body
+        form(action='/admin/book' method='POST' enctype="multipart/form-data")
+            input(type='text' name='title' placeholder='Название' required)
+            br
+            input(type='text' name='author' placeholder='Автор' required)
+            br
+            textarea(name='description' placeholder='Краткий текст' required)
+            br
+            label
+                input(type='checkbox' name='inRussian')
+                | на русском
+            br
+            input(type='file' name='image' required)
+            br
+            input(type='submit' value='Создать')
 
-    article.accord_head
+    article.accord_head Ссылка
     article.accord_body
+        form(action='/admin/link' method='POST')
+            input(type='text' name='link' placeholder='Ссылка' required)
+            br
+            input(type='text' name='description' placeholder='Описание' required)
+            br
+            input(type='submit' value='Создать')
 
-    article.accord_head
+    article.accord_head API
     article.accord_body
+        form(action='/admin/modules' method='POST')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='submit' value='Создать')
 
-    article.accord_head
+    article.accord_head Пакет
     article.accord_body
+        form(action='/admin/packages' method='POST')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='submit' value='Создать')
+
+    article.accord_head Инструмент
+    article.accord_body
+        form(action='/admin/tools' method='POST')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='submit' value='Создать')
+
+    article.accord_head Туториал
+    article.accord_body
+        form(action='/admin/tutorial' method='POST')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            input(type='text' name='source' placeholder='Источник' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='text' name='tags' placeholder='Теги через пробел' required)
+            br
+            input(type='submit' value='Создать')

@@ -11,7 +11,6 @@ html(lang="ru")
         script(src="/src/scripts/main.js")
         link(rel="stylesheet" href="/src/styles/bootstrap.min.css")
         link(rel="stylesheet" href="/src/styles/main.css")
-        //script(src="/src/scripts/less.js")
         //- add mixins
         include mixins
     body
@@ -22,33 +21,33 @@ html(lang="ru")
                 article.collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li.main_nav
-                            a(href="#") Главная
+                            a(href="/") Главная
                         li
                             a(href="#" class="dropdown-toggle" data-toggle="dropdown") Документация
                             ul.dropdown-menu
                                 li
-                                    a(href='') Модули
+                                    a(href='/docs/api') API
                                 li
-                                    a(href='') Пакеты
+                                    a(href='/docs/packages') Пакеты
                                 li
-                                    a(href='') Туториалы
+                                    a(href='/docs/tutorials') Туториалы
                                 li
-                                    a(href='') Установка
+                                    a(href='/docs/install') Установка
                         li
                             a(href="#" class="dropdown-toggle" data-toggle="dropdown") Технология
                             ul.dropdown-menu
                                 li
-                                    a(href='') Книги
+                                    a(href='/tech/books') Книги
                                 li
-                                    a(href='') Ссылки
+                                    a(href='/tech/links') Ссылки
                                 li
-                                    a(href='') Статьи
+                                    a(href='/tech/article_node') Статьи
                                 li
-                                    a(href='') Смежные темы
+                                    a(href='/tech/article_other') Смежные темы
                         li
-                            a(href="#") Инструменты
+                            a(href="/tools") Инструменты
                         li
-                            a(href="#") Помочь
+                            a(href="/about") О сайте
         section.content
             section.wrapper
                 block content

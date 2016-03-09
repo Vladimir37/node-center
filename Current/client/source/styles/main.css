@@ -28,6 +28,11 @@
     display: none;
     margin-bottom: 10px;
 }
+.accord_head {
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
 .accord_body, .accord_head {
     border: 1px solid #6ABD28;
     padding: 5px;
