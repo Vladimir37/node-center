@@ -1,3 +1,9 @@
-/**
- * Created by vladimir on 08.03.16.
- */
+var express = require('express');
+
+var render = require('../basis/render');
+
+var router = express.Router();
+
+router.get('/');
+
+module.exports = router;

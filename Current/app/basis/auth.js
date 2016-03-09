@@ -24,10 +24,27 @@ function login(req, res, next) {
         }).catch(function(err) {
             console.log(err);
             errors.e500(req, res, next);
-        })
-    })
+        });
+    });
 }
 
 function check(req, res, next) {
-    //
+    var cookie = req.cookies.node_center_adm;
+    if(!cookie) {
+        errors.e404(req, res, next);
+    }
+    models.Admin.findById(cookie).then(function(admin) {
+        if(admin) {
+            next();
+        }
+        else {
+            errors.e404(req, res, next);
+        }
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
 }
+
+exports.login = login;
+exports.check = check;

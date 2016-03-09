@@ -48,7 +48,7 @@ var articleOtherSchema = new mongoose.Schema({
     text: String,
     tags: Array
 });
-models.ArticleOther = mongoose.model('ArticleNode', articleOtherSchema);
+models.ArticleOther = mongoose.model('ArticleOther', articleOtherSchema);
 
 //links
 var linkScheme = new mongoose.Schema({
@@ -81,7 +81,7 @@ var moduleSchema = new mongoose.Schema({
     cover: String,
     text: String
 });
-models.Module = mongoose.model('Package', moduleSchema);
+models.Module = mongoose.model('Module', moduleSchema);
 
 var toolSchema = new mongoose.Schema({
     title: String,
