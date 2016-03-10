@@ -76,6 +76,8 @@ block content
         form(action='/admin/packages' method='POST')
             input(type='text' name='title' placeholder='Заголовок' required)
             br
+            input(type='text' name='source' placeholder='Адрес' required)
+            br
             textarea(name='cover' placeholder='Краткий текст' required)
             br
             textarea(name='text' placeholder='Полный текст' required)

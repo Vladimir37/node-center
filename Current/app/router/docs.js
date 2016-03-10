@@ -7,8 +7,8 @@ var pages = require('../basis/pages');
 var router = express.Router();
 
 router.get('/api/list', pages.list('Module', '/docs/api'));
-router.get('/api/item/:num');
-router.get('/api/:num');
+router.get('/api/item/:num', pages.module_full);
+router.get('/api/:num', pages.module_page);
 router.get('/api', redirect('/docs/api/0'));
 
 router.get('/packages/list', pages.list('Package', '/docs/packages'));

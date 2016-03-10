@@ -1,6 +1,11 @@
+// Пакет
+
 mixin package(pack)
     article.package
         h2=pack.title
+        article.alert.alert-success
+            b='Адрес: '
+            a(href=pack.source target = "_blank")=pack.source
         artilce.text_block!=pack.text
 
 mixin cover_package(pack)
@@ -13,6 +18,21 @@ mixin package_page(packs)
     - each pack, i in packs
         mixin cover_package(pack)
 
+// АПИ
+mixin module(pack)
+    article.package
+        h2=pack.title
+        artilce.text_block!=pack.text
+mixin cover_module(pack)
+    article.package_cover
+        h2=pack.title
+        artilce.text_block.cover_text!=pack.cover
+        a(href='/docs/api/item/' + pack.id).btn.btn-default.read Читать
+mixin module_page(packs)
+    - each pack, i in packs
+        mixin cover_module(pack)
+
+// Постраничная навигация
 mixin navigate(name, count, num)
     - count = +count
     - num = +num

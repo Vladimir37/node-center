@@ -84,8 +84,10 @@ function packages(req, res, next) {
         var title = fields.title;
         var cover = text_handling(fields.cover);
         var text = text_handling(fields.text);
+        var source = fields.source;
         models.Package.create({
             title,
+            source,
             cover,
             text
         }).then(function() {
@@ -103,12 +105,10 @@ function modules(req, res, next) {
     });
     form.parse(req, function(err, fields) {
         var title = fields.title;
-        var source = fields.source;
         var cover = text_handling(fields.cover);
         var text = text_handling(fields.text);
         models.Module.create({
             title,
-            source,
             cover,
             text
         }).then(function() {

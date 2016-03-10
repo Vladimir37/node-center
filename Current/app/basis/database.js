@@ -70,6 +70,7 @@ models.Tutorial = mongoose.model('Tutorial', tutorialScheme);
 //packages and modules
 var packageSchema = new mongoose.Schema({
     title: String,
+    source: String,
     cover: String,
     text: String
 });
@@ -77,7 +78,6 @@ models.Package = mongoose.model('Package', packageSchema);
 
 var moduleSchema = new mongoose.Schema({
     title: String,
-    source: String,
     cover: String,
     text: String
 });

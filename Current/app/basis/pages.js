@@ -19,6 +19,7 @@ function list(base, page) {
     }
 }
 
+// Packages
 function package_full(req, res, next) {
     var num = req.params.num;
     models.Package.findOne({
@@ -64,6 +65,54 @@ function package_page(req, res, next) {
     });
 }
 
+// API
+function module_full(req, res, next) {
+    var num = req.params.num;
+    models.Module.findOne({
+        _id: num
+    }).then(function(pack) {
+        if(pack) {
+            res.render('main/pages/module.jade', {pack});
+        }
+        else {
+            errors.e404(req, res, next);
+        }
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
+function module_page(req, res, next) {
+    var num = req.params.num;
+    var count;
+    models.Module.count({}).then(function(page_count) {
+        count = Math.floor(page_count / 10);
+        if(num < 0 || !re_num.test(num) || num > count) {
+            errors.e404(req, res, next);
+        }
+        else {
+            return models.Module.find({}, '', {
+                skip: num * 10,
+                limit: 10,
+                sort: {_id: -1}
+            });
+        }
+    }).then(function(packs) {
+        res.render('main/pages/module_page', {
+            addr: '/docs/api/',
+            count,
+            num,
+            packs
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
 exports.list = list;
 exports.package_full = package_full;
 exports.package_page = package_page;
+exports.module_full = module_full;
+exports.module_page = module_page;
