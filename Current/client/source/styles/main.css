@@ -61,6 +61,18 @@
     font-size: 16px;
 }
 
+/* books */
+.book {
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+}
+.book_cover {
+    max-width: 100px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 /* admin panel */
 .accord_body {
     display: none;
@@ -76,13 +88,19 @@
     padding: 5px;
 }
 
-/* Другое */
+/* other */
 a {
     outline: none !important;
+}
+.list-group-item a {
+    color: #70cf36;
 }
 .alert-success {
     background: #223142;
 }
 .tags_panel {
     margin-top: 20px;
+}
+.clearfix {
+    clear: both;
 }

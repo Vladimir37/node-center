@@ -147,7 +147,7 @@ function book(req, res, next) {
     });
     form.parse(req, function(err, fields, files) {
         var title = fields.title;
-        var author = fields.cover;
+        var author = fields.author;
         var description = text_handling(fields.description);
         var inRussian = Boolean(fields.inRussian);
         var image = files.image;

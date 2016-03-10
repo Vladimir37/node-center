@@ -1,0 +1,10 @@
+extends ../../basis/layout
+
+block content
+    h1 Книги по Node.js
+    h2 На русском
+    - each book, i in books_ru
+        mixin book(book)
+    h2 На английском
+    - each book, i in books_en
+        mixin book(book)

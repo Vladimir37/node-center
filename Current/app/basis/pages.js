@@ -247,6 +247,29 @@ function article_other_page(req, res, next) {
     });
 }
 
+// books
+function books(req, res, next) {
+    var books_ru;
+    var books_en;
+    models.Book.find({
+        inRussian: true
+    }).then(function(books) {
+        books_ru = books;
+        return models.Book.find({
+            inRussian: false
+        });
+    }).then(function(books) {
+        books_en = books;
+        res.render('main/pages/books', {
+            books_ru,
+            books_en
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
 exports.list = list;
 exports.package_full = package_full;
 exports.package_page = package_page;
@@ -258,3 +281,4 @@ exports.article_node_full = article_node_full;
 exports.article_node_page = article_node_page;
 exports.article_other_full = article_other_full;
 exports.article_other_page = article_other_page;
+exports.books = books;

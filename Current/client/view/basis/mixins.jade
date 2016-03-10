@@ -1,5 +1,4 @@
 // Пакеты
-
 mixin package(pack)
     article.package
         h2=pack.title
@@ -80,6 +79,17 @@ mixin article_node_page(packs)
 mixin article_other_page(packs)
     - each pack, i in packs
         mixin cover_article_other(pack)
+
+// Книги
+mixin book(book_elem)
+    article.book
+        h3=book_elem.title
+        img(src='/src/img/added/' + book_elem.image alt='book_cover').book_cover
+        article.alert.alert-success
+            b='Авторы: '
+            span=book_elem.author
+        artilce.text_block!=book_elem.description
+        div.clearfix
 
 // Постраничная навигация
 mixin navigate(name, count, num)
