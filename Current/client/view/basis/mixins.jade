@@ -21,30 +21,30 @@ mixin navigate(name, count, num)
         - if(num - 3 <= 0)
             - for(var i = 0; i < num; i++)
                 li
-                    a(href='/docs/packages/' + i)=i
+                    a(href=name + i)=i
         - else
             li
-                a(href='/docs/packages/0') 0
+                a(href=name + '0') 0
             li.disabled
                 a(href='#') ...
             li
-                a(href='/docs/packages/' + (num - 2))=num - 2
+                a(href=name + (num - 2))=num - 2
             li
-                a(href='/docs/packages/' + (num - 1))=num - 1
+                a(href=name + (num - 1))=num - 1
         //- Current number
         li.active
-            a(href='/docs/packages/' + num)=num
+            a(href=name + num)=num
         //- next
         - if(num + 3 >= count)
             - for(var i = num + 1; i <= count; i++)
                 li
-                    a(href='/docs/packages/' + i)=i
+                    a(href=name + i)=i
         - else
             li
-                a(href='/docs/packages/' + (num + 1))=num + 1
+                a(href=name + (num + 1))=num + 1
             li
-                a(href='/docs/packages/' + (num + 2))=num + 2
+                a(href=name + (num + 2))=num + 2
             li.disabled
                 a(href='#') ...
             li
-                a(href='/docs/packages/' + count)=count
+                a(href=name + count)=count

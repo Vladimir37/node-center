@@ -43,7 +43,9 @@
     margin-bottom: 10px;
 }
 .read {
-    float: right;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
     background: #6ABD28;
 }
 .read:hover {
@@ -51,8 +53,9 @@
 }
 
 .package_cover {
-    padding-bottom: 50px;
+    padding-bottom: 65px;
     border-bottom: 1px solid black;
+    position: relative;
 }
 .cover_text {
     font-size: 16px;

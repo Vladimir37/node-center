@@ -5,7 +5,9 @@ var re_num = new RegExp(/[0-9]+/);
 
 function list(base, page) {
     return function(req, res, next) {
-        models[base].find({}, '_id title').then(function(links) {
+        models[base].find({}, '_id title', {
+            sort: {_id: -1}
+        }).then(function(links) {
             res.render('main/list.jade', {
                 page,
                 links
@@ -45,11 +47,13 @@ function package_page(req, res, next) {
         else {
             return models.Package.find({}, '', {
                 skip: num * 10,
-                limit: 10
+                limit: 10,
+                sort: {_id: -1}
             });
         }
     }).then(function(packs) {
         res.render('main/pages/package_page', {
+            addr: '/docs/packages/',
             count,
             num,
             packs
