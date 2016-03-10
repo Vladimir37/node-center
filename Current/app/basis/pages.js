@@ -38,7 +38,7 @@ function package_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.Package.count({}).then(function(page_count) {
-        count = Math.ceil(page_count / 10);
+        count = Math.floor(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }

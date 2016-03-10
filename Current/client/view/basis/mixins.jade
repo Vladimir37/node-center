@@ -7,7 +7,44 @@ mixin cover_package(pack)
     article.package_cover
         h2=pack.title
         artilce.text_block.cover_text!=pack.cover
+        a(href='/docs/packages/item/' + pack.id).btn.btn-default.read Читать
 
 mixin package_page(packs)
     - each pack, i in packs
         mixin cover_package(pack)
+
+mixin navigate(name, count, num)
+    - count = +count
+    - num = +num
+    ul.pagination
+        //- prev
+        - if(num - 3 <= 0)
+            - for(var i = 0; i < num; i++)
+                li
+                    a(href='/docs/packages/' + i)=i
+        - else
+            li
+                a(href='/docs/packages/0') 0
+            li.disabled
+                a(href='#') ...
+            li
+                a(href='/docs/packages/' + (num - 2))=num - 2
+            li
+                a(href='/docs/packages/' + (num - 1))=num - 1
+        //- Current number
+        li.active
+            a(href='/docs/packages/' + num)=num
+        //- next
+        - if(num + 3 >= count)
+            - for(var i = num + 1; i <= count; i++)
+                li
+                    a(href='/docs/packages/' + i)=i
+        - else
+            li
+                a(href='/docs/packages/' + (num + 1))=num + 1
+            li
+                a(href='/docs/packages/' + (num + 2))=num + 2
+            li.disabled
+                a(href='#') ...
+            li
+                a(href='/docs/packages/' + count)=count
