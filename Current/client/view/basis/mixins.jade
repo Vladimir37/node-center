@@ -1,4 +1,4 @@
-// Пакет
+// Пакеты
 
 mixin package(pack)
     article.package
@@ -23,14 +23,63 @@ mixin module(pack)
     article.package
         h2=pack.title
         artilce.text_block!=pack.text
+
 mixin cover_module(pack)
     article.package_cover
         h2=pack.title
         artilce.text_block.cover_text!=pack.cover
         a(href='/docs/api/item/' + pack.id).btn.btn-default.read Читать
+
 mixin module_page(packs)
     - each pack, i in packs
         mixin cover_module(pack)
+
+// Туториалы
+mixin tutorial(pack)
+    article.package
+        h2=pack.title
+        artilce.text_block!=pack.text
+        mixin tags(pack.tags)
+
+mixin cover_tutorial(pack)
+    article.package_cover
+        h2=pack.title
+        artilce.text_block.cover_text!=pack.cover
+        a(href='/docs/tutorials/item/' + pack.id).btn.btn-default.read Читать
+
+mixin tutorial_page(packs)
+    - each pack, i in packs
+        mixin cover_tutorial(pack)
+
+// Статьи
+mixin article(pack)
+    article.package
+        h2=pack.title
+        article.alert.alert-success
+            b='Источник: '
+            a(href=pack.source target = "_blank")=pack.source
+        artilce.text_block!=pack.text
+        mixin tags(pack.tags)
+
+mixin cover_article_node(pack)
+    article.package_cover
+        h2=pack.title
+        artilce.text_block.cover_text!=pack.cover
+        a(href='/tech/article_node/item/' + pack.id).btn.btn-default.read Читать
+
+mixin cover_article_other(pack)
+    article.package_cover
+        h2=pack.title
+        artilce.text_block.cover_text!=pack.cover
+        a(href='/tech/article_other/item/' + pack.id).btn.btn-default.read Читать
+
+mixin article_node_page(packs)
+    - each pack, i in packs
+        mixin cover_article_node(pack)
+
+mixin article_other_page(packs)
+    - each pack, i in packs
+        mixin cover_article_other(pack)
 
 // Постраничная навигация
 mixin navigate(name, count, num)
@@ -68,3 +117,10 @@ mixin navigate(name, count, num)
                 a(href='#') ...
             li
                 a(href=name + count)=count
+
+// Теги
+mixin tags(tag_arr)
+    article.alert.alert-success.tags_panel
+        b='Теги: '
+        - each tag, i in tag_arr
+            a(href='/tag/' + tag target = "_blank")=' ' + tag + ' '

@@ -1,0 +1,7 @@
+extends ../../basis/layout
+
+block content
+    h1 Туториалы
+    a(href='/docs/tutorials/list').btn.btn-default.page-switch Список
+    mixin tutorial_page(packs)
+    mixin navigate(addr, count, num)

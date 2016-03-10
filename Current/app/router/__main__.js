@@ -4,6 +4,7 @@ var render = require('../basis/render');
 var admin = require('./admin');
 var docs = require('./docs');
 var tech = require('./tech');
+var tag = require('../basis/tags');
 
 var router = express.Router();
 
@@ -13,5 +14,7 @@ router.use('/admin', admin);
 
 router.use('/docs', docs);
 router.use('/tech', tech);
+
+router.use('/tag/:name', tag);
 
 module.exports = router;

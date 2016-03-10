@@ -1,0 +1,7 @@
+extends ../../basis/layout
+
+block content
+    h1 Статьи по смежным темам
+    a(href='/tech/article_other/list').btn.btn-default.page-switch Список
+    mixin article_other_page(packs)
+    mixin navigate(addr, count, num)
