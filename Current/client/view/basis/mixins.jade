@@ -2,3 +2,12 @@ mixin package(pack)
     article.package
         h2=pack.title
         artilce.text_block!=pack.text
+
+mixin cover_package(pack)
+    article.package_cover
+        h2=pack.title
+        artilce.text_block.cover_text!=pack.cover
+
+mixin package_page(packs)
+    - each pack, i in packs
+        mixin cover_package(pack)
