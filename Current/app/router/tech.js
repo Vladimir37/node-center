@@ -17,5 +17,6 @@ router.get('/article_other/:num', pages.article_other_page);
 router.get('/article_other', redirect('/tech/article_other/0'));
 
 router.get('/books', pages.books);
+router.get('/links', pages.links);
 
 module.exports = router;

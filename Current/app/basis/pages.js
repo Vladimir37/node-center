@@ -270,6 +270,64 @@ function books(req, res, next) {
     });
 }
 
+// links
+function links(req, res, next) {
+    models.Link.find({}).then(function(links_list) {
+        res.render('main/pages/links', {
+            links: links_list
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
+// tools
+function tool_full(req, res, next) {
+    var num = req.params.num;
+    models.Tool.findOne({
+        _id: num
+    }).then(function(pack) {
+        if(pack) {
+            res.render('main/pages/tool.jade', {pack});
+        }
+        else {
+            errors.e404(req, res, next);
+        }
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
+function tool_page(req, res, next) {
+    var num = req.params.num;
+    var count;
+    models.Tool.count({}).then(function(page_count) {
+        count = Math.floor(page_count / 10);
+        if(num < 0 || !re_num.test(num) || num > count) {
+            errors.e404(req, res, next);
+        }
+        else {
+            return models.Tool.find({}, '', {
+                skip: num * 10,
+                limit: 10,
+                sort: {_id: -1}
+            });
+        }
+    }).then(function(packs) {
+        res.render('main/pages/tool_page', {
+            addr: '/tools/',
+            count,
+            num,
+            packs
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
 exports.list = list;
 exports.package_full = package_full;
 exports.package_page = package_page;
@@ -282,3 +340,6 @@ exports.article_node_page = article_node_page;
 exports.article_other_full = article_other_full;
 exports.article_other_page = article_other_page;
 exports.books = books;
+exports.links = links;
+exports.tool_full = tool_full;
+exports.tool_page = tool_page;

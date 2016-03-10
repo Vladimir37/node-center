@@ -1,0 +1,13 @@
+extends ../../basis/layout
+
+block content
+    h1 Полезные ссылки
+    table.table.table-striped
+        tr
+            th Адрес
+            th Описание
+        - each link, i in links
+            tr
+                td
+                    a(href=link.link)=link.link
+                td=link.description

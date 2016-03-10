@@ -1,0 +1,7 @@
+extends ../../basis/layout
+
+block content
+    h1 Инструменты
+    a(href='/tools/list').btn.btn-default.page-switch Список
+    mixin tool_page(packs)
+    mixin navigate(addr, count, num)
