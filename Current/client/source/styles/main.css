@@ -1,6 +1,7 @@
 .wrapper {
     width: 940px;
     margin: 0 auto;
+    position: relative;
 }
 
 /* main menu */
@@ -114,6 +115,15 @@ a {
 }
 .tags_panel {
     margin-top: 20px;
+}
+.content .donat_contain {
+    width: 100%;
+}
+.donat_col {
+    text-align: center;
+}
+.right_donat_col {
+    float: right;
 }
 .clearfix {
     clear: both;

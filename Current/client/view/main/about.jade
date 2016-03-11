@@ -2,3 +2,46 @@ extends ../basis/layout
 
 block content
     h1 О сайте
+    p
+        | Сайт Node Center предназначен для публикации различной информации, связанной с Node.js и смежными технологиями.
+        | Главная цель проекта - содействовать распространению Node.js и помогать в его изучении. Связаться с администрацией можно по почте
+        b=' node.center.ru@gmail.com'
+        | . Вы можете присылать на этот адрес ваши пожелания, предложения по сотрудничеству, статьи для публикации и прочее.
+    h2 Техническая сторона
+    p
+        | Node Center написан на Node.js + Express. В качестве базы данных используется MongoDB. Движок полностью самописный,
+        | никакие готовые CMS не использовались. Во Front-end части используется jQuery и Bootstrap, так как в тяжёлых фреймворках
+        | вроде Angular или React потребности нет.
+    h2 Как помочь
+    p Если вы желаете помочь Node Center в развитии, то у вас есть несколько возможностей сделать это.
+    ol
+        li
+            b='Пришлите нам хорошую статью для публикации. '
+            | Это может быть ваша собственная статья или перевод с другого языка. Качественный контент - залог развития сайта.
+        li
+            b='Прорекламируйте Node Center. '
+            | У вас есть собственная группа в социальной сети с большим количеством подписчиков? Разместите там ссылку на нас.
+            | Это повысит посещаемость и поможет сделать сайт популярнее.
+        li
+            b='Сделайте пожертвование. '
+            | Содержание сайта - затратное дело. Вы можете помочь нам в этом, сделав перевод с помощью одной из кнопок ниже.
+            | 50% от суммы идёт на оплату работы переводчиков-фрилансеров, помогающих в переводе англоязычных статей и документации.
+            | 40% идёт на оплату сервера. Оставшиеся 10% идут администраторам в качестве мотивирующего средства.
+
+    section.container.donat_contain
+        article.panel.panel-default.col-md-4.donat_col
+            article.panel-heading В рублях (RUB)
+            article.panel-body
+                form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
+                    input(type='hidden', name='cmd', value='_s-xclick')
+                    input(type='hidden', name='hosted_button_id', value='FL7QXYZAFRC38')
+                    input(type='image', src='https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_donateCC_LG.gif', border='0', name='submit', alt='PayPal — более безопасный и легкий способ оплаты через Интернет!')
+                    img(alt='', border='0', src='https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif', width='1', height='1')
+        article.panel.panel-default.col-md-4.donat_col.right_donat_col
+            article.panel-heading В долларах (USD)
+            article.panel-body
+                form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
+                    input(type='hidden', name='cmd', value='_s-xclick')
+                    input(type='hidden', name='hosted_button_id', value='HZDS2Q2TZA2WC')
+                    input(type='image', src='https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_donateCC_LG.gif', border='0', name='submit', alt='PayPal — более безопасный и легкий способ оплаты через Интернет!')
+                    img(alt='', border='0', src='https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif', width='1', height='1')
