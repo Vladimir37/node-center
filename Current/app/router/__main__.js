@@ -1,6 +1,7 @@
 var express = require('express');
 
 var render = require('../basis/render');
+var pages = require('../basis/pages');
 var admin = require('./admin');
 var docs = require('./docs');
 var tech = require('./tech');
@@ -9,7 +10,7 @@ var tag = require('../basis/tags');
 
 var router = express.Router();
 
-router.get('/', render('main/index'));
+router.get('/', pages.index);
 
 router.use('/admin', admin);
 

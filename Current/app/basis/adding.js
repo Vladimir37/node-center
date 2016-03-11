@@ -4,6 +4,7 @@ var mime = require('mime-types');
 
 var models = require('./database');
 var errors = require('./errors');
+var logging = require('./logging');
 var text_handling = require('./text_handle');
 
 function article(req, res, next) {
@@ -23,7 +24,8 @@ function article(req, res, next) {
             cover,
             text,
             tags
-        }).then(function() {
+        }).then(function(result) {
+            logging(title, '/tech/article_' + type_article.toLowerCase() + '/item/' + result._id);
             res.end('Succces!');
         }).catch(function(err) {
             console.log(err);
@@ -67,7 +69,8 @@ function tutorial(req, res, next) {
             cover,
             text,
             tags
-        }).then(function() {
+        }).then(function(result) {
+            logging(title, '/docs/tutorials/item/' + result._id);
             res.end('Succces!');
         }).catch(function(err) {
             console.log(err);
@@ -90,7 +93,8 @@ function packages(req, res, next) {
             source,
             cover,
             text
-        }).then(function() {
+        }).then(function(result) {
+            logging(title, '/docs/packages/item/' + result._id);
             res.end('Succces!');
         }).catch(function(err) {
             console.log(err);
@@ -111,7 +115,8 @@ function modules(req, res, next) {
             title,
             cover,
             text
-        }).then(function() {
+        }).then(function(result) {
+            logging(title, '/docs/api/item/' + result._id);
             res.end('Succces!');
         }).catch(function(err) {
             console.log(err);
@@ -132,7 +137,8 @@ function tool(req, res, next) {
             title,
             cover,
             text
-        }).then(function() {
+        }).then(function(result) {
+            logging(title, '/tools/item/' + result._id);
             res.end('Succces!');
         }).catch(function(err) {
             console.log(err);

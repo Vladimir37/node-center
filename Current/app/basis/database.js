@@ -67,7 +67,7 @@ var tutorialScheme = new mongoose.Schema({
 });
 models.Tutorial = mongoose.model('Tutorial', tutorialScheme);
 
-//packages and modules
+//packages and API
 var packageSchema = new mongoose.Schema({
     title: String,
     source: String,
@@ -83,12 +83,20 @@ var moduleSchema = new mongoose.Schema({
 });
 models.Module = mongoose.model('Module', moduleSchema);
 
+// tools
 var toolSchema = new mongoose.Schema({
     title: String,
     cover: String,
     text: String
 });
 models.Tool = mongoose.model('Tool', toolSchema);
+
+// history
+var historySchema = new mongoose.Schema({
+    addr: String,
+    name: String
+});
+models.History = mongoose.model('History', historySchema);
 
 mongoose.connect('mongodb://localhost/node_center');
 

@@ -328,6 +328,19 @@ function tool_page(req, res, next) {
     });
 }
 
+// index page
+function index(req, res, next) {
+    models.History.find({}, '', {
+        limit: 5,
+        sort: {_id: -1}
+    }).then(function(notations) {
+        res.render('main/index', {notations});
+    }).catch(function(err) {
+        console.log(err);
+        res.render('main/index', {notations: []});
+    });
+}
+
 exports.list = list;
 exports.package_full = package_full;
 exports.package_page = package_page;
@@ -343,3 +356,4 @@ exports.books = books;
 exports.links = links;
 exports.tool_full = tool_full;
 exports.tool_page = tool_page;
+exports.index = index;
