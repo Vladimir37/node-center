@@ -21,6 +21,6 @@ router.get('/tutorials/item/:num', pages.tutorial_full);
 router.get('/tutorials/:num', pages.tutorial_page);
 router.get('/tutorials', redirect('/docs/tutorials/0'));
 
-router.get('/install');
+router.get('/install', render('main/install'));
 
 module.exports = router;
