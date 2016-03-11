@@ -12,12 +12,10 @@ function login(req, res, next) {
             console.log(err);
             errors.e500(req, res, next);
         }
-        console.log(fields);
         models.Admin.findOne({
             name: fields.login,
             pass: fields.pass
         }).then(function(admin) {
-            console.log(admin);
             if(admin) {
                 res.cookie('node_center_adm', admin._id);
                 res.redirect('/admin');
