@@ -107,6 +107,9 @@
 a {
     outline: none !important;
 }
+.content {
+    margin-bottom: 25px;
+}
 .list-group-item a {
     color: #70cf36;
 }
