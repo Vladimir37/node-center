@@ -6,7 +6,6 @@ html(lang="ru")
         meta(name="robots",content="all")
         meta(name="description",content="Node-Center - это главный русскоязычный сайт, посвящённый Node.js. Здесь вы можете найти не только самые свежие новости, но и огромное количество переведённой на русский язык документации.")
         meta(name="keywords",content="Nodejs, node, javascript, server, сервер, express, mongo, mongodb, sails, уроки, учебник")
-        script(src="/src/scripts/ya.js")
         script(src="/src/scripts/jquery.js")
         script(src="/src/scripts/bootstrap.min.js")
         script(src="/src/scripts/main.js")
@@ -16,6 +15,7 @@ html(lang="ru")
         include mixins
     body
         section.header
+            include ymc
             section.wrapper
                 figure.logo
                     img(src='/src/img/main/logo.png' alt='logo')
