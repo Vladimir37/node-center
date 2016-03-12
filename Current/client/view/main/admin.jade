@@ -65,6 +65,8 @@ block content
         form(action='/admin/modules' method='POST')
             input(type='text' name='title' placeholder='Заголовок' required)
             br
+            input(type='text' name='source' placeholder='Оригинал' required)
+            br
             textarea(name='cover' placeholder='Краткий текст' required)
             br
             textarea(name='text' placeholder='Полный текст' required)

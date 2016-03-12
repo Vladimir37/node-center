@@ -111,9 +111,11 @@ function modules(req, res, next) {
         var title = fields.title;
         var cover = text_handling(fields.cover);
         var text = text_handling(fields.text);
+        var source = fields.source;
         models.Module.create({
             title,
             cover,
+            source,
             text
         }).then(function(result) {
             logging(title, '/docs/api/item/' + result._id);

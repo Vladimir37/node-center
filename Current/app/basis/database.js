@@ -78,6 +78,7 @@ models.Package = mongoose.model('Package', packageSchema);
 
 var moduleSchema = new mongoose.Schema({
     title: String,
+    source: String,
     cover: String,
     text: String
 });
