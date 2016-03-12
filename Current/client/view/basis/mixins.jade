@@ -37,6 +37,9 @@ mixin module_page(packs)
 mixin tutorial(pack)
     article.package
         h2=pack.title
+        article.alert.alert-success
+            b='Источник: '
+            a(href=pack.source target = "_blank")=pack.source
         artilce.text_block!=pack.text
         mixin tags(pack.tags)
 
