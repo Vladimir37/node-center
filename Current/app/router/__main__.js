@@ -16,7 +16,7 @@ router.use('/admin', admin);
 
 router.use('/docs', docs);
 router.use('/tech', tech);
-router.use('/tools', tools);
+//router.use('/tools', tools);
 router.use('/about', render('main/about'));
 
 router.use('/tag/:tag', tag);

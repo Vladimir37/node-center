@@ -16,6 +16,11 @@ router.get('/article_other/item/:num', pages.article_other_full);
 router.get('/article_other/:num', pages.article_other_page);
 router.get('/article_other', redirect('/tech/article_other/0'));
 
+router.get('/tools/list', pages.list('Tool', '/tech/tools'));
+router.get('/tools/item/:num', pages.tool_full);
+router.get('/tools/:num', pages.tool_page);
+router.get('/tools/', redirect('/tech/tools/0'));
+
 router.get('/books', pages.books);
 router.get('/links', pages.links);
 

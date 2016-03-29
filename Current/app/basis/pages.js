@@ -317,7 +317,7 @@ function tool_page(req, res, next) {
         }
     }).then(function(packs) {
         res.render('main/pages/tool_page', {
-            addr: '/tools/',
+            addr: '/tech/tools/',
             count,
             num,
             packs

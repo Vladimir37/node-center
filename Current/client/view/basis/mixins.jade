@@ -107,7 +107,7 @@ mixin cover_tool(pack)
     article.package_cover
         h2=pack.title
         artilce.text_block.cover_text!=pack.cover
-        a(href='/tools/item/' + pack.id).btn.btn-default.read Читать
+        a(href='/tech/tools/item/' + pack.id).btn.btn-default.read Читать
 
 mixin tool_page(packs)
     - each pack, i in packs
