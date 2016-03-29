@@ -188,7 +188,7 @@ function event(req, res, next) {
         var title = fields.title;
         var cover = text_handling(fields.cover);
         var text = text_handling(fields.text);
-        var date = fields.time ? new Date(fields.time) : new Date();
+        var date = fields.time ? new Date(+fields.time) : new Date();
         models.Event.create({
             title,
             date,

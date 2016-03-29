@@ -118,12 +118,4 @@ models.History = mongoose.model('History', historySchema);
 
 mongoose.connect('mongodb://localhost/node_center');
 
-//for(var i = 0; i < 85; i++) {
-//    models.Tool.create({
-//        title: 'Инструмент ' + i,
-//        cover: 'Ковёр',
-//        text: 'Текст'
-//    })
-//}
-
 module.exports = models;
