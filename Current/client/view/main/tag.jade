@@ -1,20 +1,20 @@
 extends ../basis/layout
 
 block content
-    h1 Поиск по тегу #{tag}
-    h2 Статьи по Node.js
+    h1 Поиск по тегу «#{tag}»
+    h2.tag_search Статьи по Node.js
     - if(!node.length)
         article.no_result По этому тегу статей не найдено
     - else
         - each article, i in node
             mixin cover_article_node(article)
-    h2 Статьи по смежным темам
+    h2.tag_search Статьи по смежным темам
     - if(!other.length)
         article.no_result По этому тегу статей не найдено
     - else
         - each article, i in other
             mixin cover_article_other(article)
-    h2 Туториалы
+    h2.tag_search Туториалы
     - if(!tutorials.length)
         article.no_result По этому тегу статей не найдено
     - else

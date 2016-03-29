@@ -285,7 +285,7 @@ function links(req, res, next) {
 
 //ru community
 function comm_ru(req, res, next) {
-    models.Link.find({inRussian: true}).then(function(links_list) {
+    models.Community.find({inRussian: true}).then(function(links_list) {
         res.render('main/pages/links', {
             title: 'Русскоязычное сообщество',
             links: links_list
@@ -298,7 +298,7 @@ function comm_ru(req, res, next) {
 
 //en community
 function comm_en(req, res, next) {
-    models.Link.find({inRussian: false}).then(function(links_list) {
+    models.Community.find({inRussian: false}).then(function(links_list) {
         res.render('main/pages/links', {
             title: 'Англоязычное сообщество',
             links: links_list

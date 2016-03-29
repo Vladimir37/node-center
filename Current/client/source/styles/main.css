@@ -103,7 +103,18 @@
     color: #6ABD28;
 }
 
+/* tables */
+.table-striped th {
+    font-size: 18px;
+}
+.table-striped td {
+    font-size: 16px;
+}
+
 /* other */
+.tag_search {
+    text-decoration: underline;
+}
 a {
     outline: none !important;
 }
