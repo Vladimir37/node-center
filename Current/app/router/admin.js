@@ -19,6 +19,8 @@ router.post('/packages', auth.check, adding.packages);
 router.post('/modules', auth.check, adding.modules);
 router.post('/tool', auth.check, adding.tool);
 router.post('/book', auth.check, adding.book);
+router.post('/event', auth.check, adding.event);
+router.post('/community', auth.check, adding.community);
 
 router.post('/preview', auth.check, preview);
 

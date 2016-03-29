@@ -274,6 +274,33 @@ function books(req, res, next) {
 function links(req, res, next) {
     models.Link.find({}).then(function(links_list) {
         res.render('main/pages/links', {
+            title: 'Полезные ссылки',
+            links: links_list
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
+//ru community
+function comm_ru(req, res, next) {
+    models.Link.find({inRussian: true}).then(function(links_list) {
+        res.render('main/pages/links', {
+            title: 'Русскоязычное сообщество',
+            links: links_list
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
+//en community
+function comm_en(req, res, next) {
+    models.Link.find({inRussian: false}).then(function(links_list) {
+        res.render('main/pages/links', {
+            title: 'Англоязычное сообщество',
             links: links_list
         });
     }).catch(function(err) {
@@ -328,6 +355,50 @@ function tool_page(req, res, next) {
     });
 }
 
+function event_page(req, res, next) {
+    var num = req.params.num;
+    var count;
+    models.Event.count({}).then(function(page_count) {
+        count = Math.ceil(page_count / 10);
+        if(num < 0 || !re_num.test(num) || num > count) {
+            errors.e404(req, res, next);
+        }
+        else {
+            return models.Event.find({}, '', {
+                skip: num * 10,
+                limit: 10,
+                sort: {_id: -1}
+            });
+        }
+    }).then(function(packs) {
+        res.render('main/pages/event_page', {
+            addr: '/comm/events/',
+            count,
+            num,
+            packs
+        });
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+function event_full(req, res, next) {
+    var num = req.params.num;
+    models.Event.findOne({
+        _id: num
+    }).then(function(pack) {
+        if(pack) {
+            res.render('main/pages/event.jade', {pack});
+        }
+        else {
+            errors.e404(req, res, next);
+        }
+    }).catch(function(err) {
+        console.log(err);
+        errors.e500(req, res, next);
+    });
+}
+
 // index page
 function index(req, res, next) {
     models.History.find({}, '', {
@@ -354,6 +425,10 @@ exports.article_other_full = article_other_full;
 exports.article_other_page = article_other_page;
 exports.books = books;
 exports.links = links;
+exports.comm_ru = comm_ru;
+exports.comm_en = comm_en;
 exports.tool_full = tool_full;
 exports.tool_page = tool_page;
+exports.event_full = event_full;
+exports.event_page = event_page;
 exports.index = index;

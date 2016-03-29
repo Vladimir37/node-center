@@ -112,6 +112,32 @@ block content
             br
             input(type='submit' value='Создать')
 
+    article.accord_head Событие
+    article.accord_body
+        form(action='/admin/event' method='POST')
+            input(type='text' name='title' placeholder='Заголовок' required)
+            br
+            textarea(name='cover' placeholder='Краткий текст' required)
+            br
+            textarea(name='text' placeholder='Полный текст' required)
+            br
+            input(type='text' name='time' placeholder='Дата в секундах (необязательно)')
+            br
+            input(type='submit' value='Создать')
+
+    article.accord_head Сообщество
+    article.accord_body
+        form(action='/admin/community' method='POST')
+            input(type='text' name='link' placeholder='Ссылка' required)
+            br
+            input(type='text' name='description' placeholder='Описание' required)
+            br
+            label
+                input(type='checkbox' name='inRussian')
+                | русскоязычное
+            br
+            input(type='submit' value='Создать')
+
     h2 Превью
     article.accord_head Превью
     article.accord_body

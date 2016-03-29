@@ -180,6 +180,51 @@ function book(req, res, next) {
     });
 }
 
+function event(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
+    form.parse(req, function(err, fields) {
+        var title = fields.title;
+        var cover = text_handling(fields.cover);
+        var text = text_handling(fields.text);
+        var date = fields.time ? new Date(fields.time) : new Date();
+        models.Event.create({
+            title,
+            date,
+            cover,
+            text
+        }).then(function(result) {
+            logging(title, '/comm/events/item/' + result._id);
+            res.end('Succces!');
+        }).catch(function(err) {
+            console.log(err);
+            errors.e500(req, res, next);
+        });
+    });
+}
+
+function community(req, res, next) {
+    var form = new formidable.IncomingForm({
+        uploadDir: "temp"
+    });
+    form.parse(req, function(err, fields) {
+        var link = fields.link;
+        var description = fields.description;
+        var inRussian = Boolean(fields.inRussian);
+        models.Community.create({
+            link,
+            description,
+            inRussian
+        }).then(function() {
+            res.end('Succces!');
+        }).catch(function(err) {
+            console.log(err);
+            errors.e500(req, res, next);
+        });
+    });
+}
+
 exports.article = article;
 exports.link = link;
 exports.tutorial = tutorial;
@@ -187,3 +232,5 @@ exports.packages = packages;
 exports.modules = modules;
 exports.tool = tool;
 exports.book = book;
+exports.event = event;
+exports.community = community;

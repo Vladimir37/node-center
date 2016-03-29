@@ -113,6 +113,23 @@ mixin tool_page(packs)
     - each pack, i in packs
         mixin cover_tool(pack)
 
+// События
+mixin event(pack)
+    article.package
+        h2=pack.title
+        article.alert.alert-success
+            b='Дата: '
+            span=pack.date.toLocaleDateString()
+        artilce.text_block!=pack.text
+mixin cover_event(pack)
+    article.package_cover
+        h2=pack.title
+        artilce.text_block.cover_text!=pack.cover
+        a(href='/comm/events/item/' + pack.id).btn.btn-default.read Читать
+mixin event_page(packs)
+    - each pack, i in packs
+        mixin cover_event(pack)
+
 // Постраничная навигация
 mixin navigate(name, count, num)
     - count = +count

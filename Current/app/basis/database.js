@@ -51,21 +51,29 @@ var articleOtherSchema = new mongoose.Schema({
 models.ArticleOther = mongoose.model('ArticleOther', articleOtherSchema);
 
 //links
-var linkScheme = new mongoose.Schema({
+var linkSchema = new mongoose.Schema({
     link: String,
     description: String
 });
-models.Link = mongoose.model('Link', linkScheme);
+models.Link = mongoose.model('Link', linkSchema);
+
+//community
+var communitySchema = new mongoose.Schema({
+    link: String,
+    description: String,
+    inRussian: Boolean
+});
+models.Community = mongoose.model('Community', communitySchema);
 
 //tutorials
-var tutorialScheme = new mongoose.Schema({
+var tutorialSchema = new mongoose.Schema({
     title: String,
     source: String,
     cover: String,
     text: String,
     tags: Array
 });
-models.Tutorial = mongoose.model('Tutorial', tutorialScheme);
+models.Tutorial = mongoose.model('Tutorial', tutorialSchema);
 
 //packages and API
 var packageSchema = new mongoose.Schema({
@@ -91,6 +99,15 @@ var toolSchema = new mongoose.Schema({
     text: String
 });
 models.Tool = mongoose.model('Tool', toolSchema);
+
+//events
+var eventSchema = new mongoose.Schema({
+    title: String,
+    cover: String,
+    text: String,
+    date: Date
+});
+models.Event = mongoose.model('Event', eventSchema);
 
 // history
 var historySchema = new mongoose.Schema({
