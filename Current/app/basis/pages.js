@@ -41,7 +41,7 @@ function package_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.Package.count({}).then(function(page_count) {
-        count = Math.floor(page_count / 10);
+        count = Math.ceil(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }
@@ -87,7 +87,7 @@ function module_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.Module.count({}).then(function(page_count) {
-        count = Math.floor(page_count / 10);
+        count = Math.ceil(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }
@@ -133,7 +133,7 @@ function tutorial_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.Tutorial.count({}).then(function(page_count) {
-        count = Math.floor(page_count / 10);
+        count = Math.ceil(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }
@@ -179,7 +179,7 @@ function article_node_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.ArticleNode.count({}).then(function(page_count) {
-        count = Math.floor(page_count / 10);
+        count = Math.ceil(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }
@@ -223,7 +223,7 @@ function article_other_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.ArticleOther.count({}).then(function(page_count) {
-        count = Math.floor(page_count / 10);
+        count = Math.ceil(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }
@@ -304,7 +304,7 @@ function tool_page(req, res, next) {
     var num = req.params.num;
     var count;
     models.Tool.count({}).then(function(page_count) {
-        count = Math.floor(page_count / 10);
+        count = Math.ceil(page_count / 10);
         if(num < 0 || !re_num.test(num) || num > count) {
             errors.e404(req, res, next);
         }

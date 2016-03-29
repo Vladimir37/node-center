@@ -137,7 +137,7 @@ mixin navigate(name, count, num)
             a(href=name + num)=num
         //- next
         - if(num + 3 >= count)
-            - for(var i = num + 1; i <= count; i++)
+            - for(var i = num + 1; i < count; i++)
                 li
                     a(href=name + i)=i
         - else
@@ -148,7 +148,7 @@ mixin navigate(name, count, num)
             li.disabled
                 a(href='#') ...
             li
-                a(href=name + count)=count
+                a(href=name + (count - 1))=count -1
 
 // Теги
 mixin tags(tag_arr)
