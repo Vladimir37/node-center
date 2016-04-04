@@ -115,6 +115,18 @@
 .tag_search {
     text-decoration: underline;
 }
+.breadcrumb {
+    background: #223142;
+    margin-top: 2px;
+}
+.active_bread {
+    color: #6ABD28;
+    font-weight: bold;
+}
+.cross_head {
+    font-size: 20px;
+    font-weight: bold;
+}
 a {
     outline: none !important;
 }

@@ -6,6 +6,8 @@ var pages = require('../basis/pages');
 
 var router = express.Router();
 
+router.get('/', render('main/crossroads/comm'));
+
 router.get('/events/list', pages.list('Event', '/comm/events'));
 router.get('/events/item/:num', pages.event_full);
 router.get('/events/:num', pages.event_page);

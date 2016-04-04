@@ -6,6 +6,8 @@ var pages = require('../basis/pages');
 
 var router = express.Router();
 
+router.get('/', render('main/crossroads/docs'));
+
 router.get('/api/list', pages.list('Module', '/docs/api'));
 router.get('/api/item/:num', pages.module_full);
 router.get('/api/:num', pages.module_page);

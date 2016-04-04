@@ -6,6 +6,8 @@ var pages = require('../basis/pages');
 
 var router = express.Router();
 
+router.get('/', render('main/crossroads/tech'));
+
 router.get('/article_node/list', pages.list('ArticleNode', '/tech/article_node'));
 router.get('/article_node/item/:num', pages.article_node_full);
 router.get('/article_node/:num', pages.article_node_page);

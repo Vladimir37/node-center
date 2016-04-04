@@ -1,6 +1,9 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li Технология
+        li.active_bread Инструменты
     h1 Инструменты
     a(href='/tech/tools/list').btn.btn-default.page-switch Список
     mixin tool_page(packs)
