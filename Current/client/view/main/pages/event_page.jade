@@ -1,6 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/comm/') Сообщество
+        li События
     h1 События
     a(href='/comm/events/list').btn.btn-default.page-switch Список
     mixin event_page(packs)

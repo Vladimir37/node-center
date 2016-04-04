@@ -1,6 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/tech/') Технология
+        li Статьи по Node.js
     h1 Статьи по Node.js
     a(href='/tech/article_node/list').btn.btn-default.page-switch Список
     mixin article_node_page(packs)

@@ -164,6 +164,7 @@ function article_node_full(req, res, next) {
         _id: num
     }).then(function(pack) {
         if(pack) {
+            pack.node = true;
             res.render('main/pages/article.jade', {pack});
         }
         else {
@@ -208,6 +209,7 @@ function article_other_full(req, res, next) {
         _id: num
     }).then(function(pack) {
         if(pack) {
+            pack.node = false;
             res.render('main/pages/article.jade', {pack});
         }
         else {
@@ -275,6 +277,7 @@ function links(req, res, next) {
     models.Link.find({}).then(function(links_list) {
         res.render('main/pages/links', {
             title: 'Полезные ссылки',
+            tech: true,
             links: links_list
         });
     }).catch(function(err) {
@@ -288,6 +291,7 @@ function comm_ru(req, res, next) {
     models.Community.find({inRussian: true}).then(function(links_list) {
         res.render('main/pages/links', {
             title: 'Русскоязычное сообщество',
+            tech: false,
             links: links_list
         });
     }).catch(function(err) {

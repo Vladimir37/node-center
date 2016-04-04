@@ -1,6 +1,13 @@
 extends ../../basis/layout
 
 block content
+    - var type = {};
+    - if(tech) {type.addr = '/tech/'; type.name = 'Технология'}
+    - else {type.addr = '/comm/'; type.name = 'Сообщество'}
+    ul.breadcrumb
+        li
+            a(href=type.addr)=type.name
+        li=title
     h1=title
     table.table.table-striped
         tr

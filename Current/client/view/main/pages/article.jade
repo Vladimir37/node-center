@@ -1,4 +1,13 @@
 extends ../../basis/layout
 
 block content
+    - var type = {}
+    - if (pack.node) {type.name = 'Статьи по Node.js'; type.link = 'article_node'}
+    - else {type.name = 'Статьи по смежным темам'; type.link = 'article_other'}
+    ul.breadcrumb
+        li
+            a(href='/tech/') Технология
+        li
+            a(href='/tech/' + type.link)=type.name
+        li=pack.title
     mixin article(pack)

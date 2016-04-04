@@ -1,4 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/comm/') Сообщество
+        li
+            a(href='/comm/events/') События
+        li=pack.title
     mixin event(pack)

@@ -1,6 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/docs/') Документация
+        li Туториалы
     h1 Туториалы
     a(href='/docs/tutorials/list').btn.btn-default.page-switch Список
     mixin tutorial_page(packs)

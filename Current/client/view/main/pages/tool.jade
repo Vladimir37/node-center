@@ -2,8 +2,9 @@ extends ../../basis/layout
 
 block content
     ul.breadcrumb
-        li Технология
+        li
+            a(href='/tech/') Технология
         li
             a(href='/tech/tools/') Инструменты
-        li.active_bread=pack.title
+        li=pack.title
     mixin tool(pack)

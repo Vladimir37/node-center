@@ -1,6 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/tech/') Технология
+        li Статьи по смежным темам
     h1 Статьи по смежным темам
     a(href='/tech/article_other/list').btn.btn-default.page-switch Список
     mixin article_other_page(packs)

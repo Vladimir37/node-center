@@ -1,6 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/tech/') Технология
+        li Книги
     h1 Книги по Node.js
     h2 На русском
     - each book, i in books_ru

@@ -1,6 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/docs/') Документация
+        li Документация по API
     h1 Документация по API
     a(href='/docs/api/list').btn.btn-default.page-switch Список
     mixin module_page(packs)

@@ -1,4 +1,10 @@
 extends ../../basis/layout
 
 block content
+    ul.breadcrumb
+        li
+            a(href='/docs/') Документация
+        li
+            a(href='/docs/tutorials/') Туториалы
+        li=pack.title
     mixin tutorial(pack)
