@@ -1,3 +1,8 @@
+@font-face {
+    font-family: code_font;
+    src: url('/src/styles/DroidSansMono.ttf');
+}
+
 .wrapper {
     width: 940px;
     margin: 0 auto;
@@ -33,6 +38,7 @@
 }
 .code {
     border: 1px solid #6ABD28;
+    font-family: code_font;
     padding: 5px;
     background: #223142;
     width: 90%;
