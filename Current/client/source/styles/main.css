@@ -139,6 +139,12 @@ a {
 .content {
     margin-bottom: 25px;
 }
+.no_result {
+    font-style: italic;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    padding: 25px 0px;
+}
 .list-group-item a {
     color: #70cf36;
 }
