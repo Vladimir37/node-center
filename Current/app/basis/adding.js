@@ -140,7 +140,7 @@ function tool(req, res, next) {
             cover,
             text
         }).then(function(result) {
-            logging(title, '/tools/item/' + result._id);
+            logging(title, '/tech/tools/item/' + result._id);
             res.end('Succces!');
         }).catch(function(err) {
             console.log(err);

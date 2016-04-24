@@ -2,10 +2,12 @@ doctype
 html(lang="ru")
     head
         meta(charset="UTF-8")
-        title Node Center
+        //- add mixins
+        include mixins
+        block title
         meta(name="robots",content="all")
         meta(name="description",content="Node-Center - это главный русскоязычный сайт, посвящённый Node.js. Здесь вы можете найти не только самые свежие новости, но и огромное количество переведённой на русский язык документации.")
-        meta(name="keywords",content="Nodejs, node, javascript, server, сервер, express, mongo, mongodb, sails, уроки, учебник")
+        meta(name="keywords",content="Nodejs, node, javascript, server, сервер, express, mongo, mongodb, sails, уроки, учебник, документация, MEAN, сайт, установка, программирование")
         script(src="/src/scripts/jquery.js")
         script(src="/src/scripts/bootstrap.min.js")
         script(src="/src/scripts/code.min.js")
@@ -13,8 +15,6 @@ html(lang="ru")
         link(rel="stylesheet" href="/src/styles/bootstrap.min.css")
         link(rel="stylesheet" href="/src/styles/code.min.css")
         link(rel="stylesheet" href="/src/styles/main.css")
-        //- add mixins
-        include mixins
     body
         section.header
             include ymc

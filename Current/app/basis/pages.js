@@ -359,6 +359,7 @@ function tool_page(req, res, next) {
     });
 }
 
+// events
 function event_page(req, res, next) {
     var num = req.params.num;
     var count;
@@ -371,7 +372,7 @@ function event_page(req, res, next) {
             return models.Event.find({}, '', {
                 skip: num * 10,
                 limit: 10,
-                sort: {_id: -1}
+                sort: {date: -1}
             });
         }
     }).then(function(packs) {

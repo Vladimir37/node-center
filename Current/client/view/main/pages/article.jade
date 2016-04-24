@@ -1,5 +1,8 @@
 extends ../../basis/layout
 
+block title
+    mixin title(pack.title)
+
 block content
     - var type = {}
     - if (pack.node) {type.name = 'Статьи по Node.js'; type.link = 'article_node'}

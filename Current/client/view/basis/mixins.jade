@@ -124,6 +124,9 @@ mixin event(pack)
 mixin cover_event(pack)
     article.package_cover
         h2=pack.title
+        article.alert.alert-success
+            b='Дата: '
+            span=pack.date.toJSON().slice(0, 10)
         artilce.text_block.cover_text!=pack.cover
         a(href='/comm/events/item/' + pack.id).btn.btn-default.read Читать
 mixin event_page(packs)
@@ -173,3 +176,10 @@ mixin tags(tag_arr)
         b='Теги: '
         - each tag, i in tag_arr
             a(href='/tag/' + tag target = "_blank")=' ' + tag + ' '
+
+// Заголовок
+mixin title(title)
+    - if(title)
+        title='Node Center | ' + title
+    - else
+        title Node Center
